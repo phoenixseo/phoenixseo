@@ -1,0 +1,16 @@
+name: Count Down
+description: Allows the creation of a custom block with a countdown function for announcements, such as time-limited offers or upcoming releases.
+package: More than Themes
+
+type: module
+core: 8.x
+
+version: 8.x-1.0-alpha2
+
+configure: mt_countdown.settings
+
+dependencies:
+  - datetime:datetime
+  - options:options
+  - field_ui:field_ui
+  - block

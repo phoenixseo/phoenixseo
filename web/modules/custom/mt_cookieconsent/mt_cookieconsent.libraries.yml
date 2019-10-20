@@ -1,0 +1,13 @@
+mt_cookieconsent:
+  version: 1.x
+  css:
+    theme:
+      //cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css: {preprocess: false, type: external, minified: true}
+      css/mt_cookieconsent.css: {}
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js: {preprocess: false, type: external, minified: true}
+    js/mt_cookieconsent.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

@@ -1,0 +1,119 @@
+<?php
+
+/**
+ * @file
+ * Contains mt_countdown.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function mt_countdown_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the mt_countdown module.
+    case 'help.page.mt_countdown':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Configure the content and layout of the Count Down.') . '</p>';
+
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mt_countdown_theme() {
+  // Theme for mt_countdown block.
+  $themes['mt_countdown'] = [
+    'template'  => 'block--mt_countdown',
+    'variables' => [
+      'data' => NULL,
+    ],
+  ];
+
+  return $themes;
+
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function mt_countdown_page_attachments(array &$attachments) {
+
+  $config = \Drupal::config('mt_countdown.settings');
+
+  // Set data to drupal settings.
+  $attachments['#attached']['drupalSettings']['mt_countdown']['expiration_date'] = $config->get('expiration_date');
+
+  // Attach library.
+  $attachments['#attached']['library'][] = 'mt_countdown/mt_countdown';
+
+  // Get template path.
+  $active_theme = \Drupal::service('theme.manager')->getActiveTheme();
+  $template_file = $active_theme->getPath() . '/templates/mt_countdown_inject.html.twig';
+
+  // Check if template in the active theme exist.
+  if (!file_exists($template_file)) {
+    $module_path = drupal_get_path('module', 'mt_countdown');
+    $template_file = $module_path . '/templates/mt_countdown_inject.html.twig';
+  }
+
+  // Create configs array.
+  $config = \Drupal::config('mt_countdown.settings');
+  $vars = [];
+
+  $predefined_palettes = $config->get('predefined_palettes');
+  switch ($predefined_palettes) {
+    case 0:
+      $predefined_palettes = '';
+      break;
+
+    case 1:
+      $predefined_palettes = 'custom-theme';
+      break;
+
+    case 2:
+      $predefined_palettes = 'dark-yellow';
+      break;
+
+    case 3:
+      $predefined_palettes = 'light-green';
+      break;
+
+    case 4:
+      $predefined_palettes = 'dark-green';
+      break;
+  }
+  $vars['title'] = $config->get('title');
+  $vars['prompt_message'] = $config->get('prompt_message');
+  $vars['days_to'] = $config->get('days_to');
+  $vars['target_url'] = $config->get('target_url');
+  $vars['dismiss_text'] = $config->get('dismiss_text');
+  $vars['inject_in_the_body'] = $config->get('inject_in_the_body');
+
+  $vars['predefined_palettes'] = $predefined_palettes ? $predefined_palettes : 'mt-count-down-theme';
+
+  $vars['background'] = $config->get('background');
+  $vars['title_color'] = $config->get('title_color');
+  $vars['message_color'] = $config->get('message_color');
+  $vars['notes_color'] = $config->get('notes_color');
+  $vars['button_background'] = $config->get('button_background');
+  $vars['button_color'] = $config->get('button_color');
+
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute();
+  if (!$is_admin) {
+    // Render twig template.
+    $twig_service = \Drupal::service('twig');
+    $html = $twig_service->loadTemplate($template_file)->render($vars);
+    $description = [
+      '#type' => 'inline_template',
+      '#children' => $html,
+    ];
+    $attachments['#attached']['html_head'][] = [$description, 'description'];
+  }
+}

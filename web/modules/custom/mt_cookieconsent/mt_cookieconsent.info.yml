@@ -1,0 +1,13 @@
+name: MtT Cookie Consent Module
+description: Drupal8 module. Include Cookie Consent Javascript library.
+package: Custom
+
+type: module
+core: 8.x
+
+version: 8.x-1.0-alpha1
+
+dependencies:
+  - datetime:datetime
+  - options:options
+  - field_ui:field_ui

@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains mt_cookieconsent.module.
+ */
+
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_theme().
+ */
+function mt_cookieconsent_theme() {
+  // Theme for mt_cookieconsent block.
+  $themes['mt_cookieconsent'] = [
+    'template' => 'mt_cookieconsent',
+    'variables' => [
+      'data' => NULL,
+    ],
+  ];
+
+  return $themes;
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function mt_cookieconsent_page_attachments(array &$attachments) {
+
+  $config = \Drupal::config('mt_cookieconsent.settings');
+  // Attach library.
+  $attachments['#attached']['library'][] = 'mt_cookieconsent/mt_cookieconsent';
+  // Set data to drupal settings.
+  $attachments['#attached']['drupalSettings']['mt_cookieconsent']['theme_select'] = $config->get('theme_select');
+  $attachments['#attached']['drupalSettings']['mt_cookieconsent']['alert_message'] = $config->get('alert_message');
+  $attachments['#attached']['drupalSettings']['mt_cookieconsent']['target_url'] = $config->get('target_url');
+
+}

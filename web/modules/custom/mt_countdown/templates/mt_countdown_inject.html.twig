@@ -1,0 +1,80 @@
+{% if inject_in_the_body %}
+
+  <style>
+
+    .mt-count-down {
+      background-color: {{ background }};
+    }
+    .mt-count-down__title {
+      color: {{ title_color }};
+      font-weight: bold;
+    }
+    .mt-count-down__notes {
+      color: {{ notes_color }};
+    }
+    .mt-count-down__message {
+      color: {{ message_color }};
+    }
+    .mt-count-down__daysto {
+      color: {{ notes_color }};
+    }
+    .mt-count-down__button {
+      background-color: {{ button_background }};
+      color: {{ button_color }};
+      border: 1px solid {{ button_color }};
+      padding: 5px;
+    }
+
+  </style>
+
+  <div class="{{ predefined_palettes }} mt-count-down-inject mt-count-down alert alert-dismissible fade show" role="alert">
+
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <div class="mt-container">
+      <div class="mt-row">
+
+        <div class="mt-col-md-8">
+          <div class="mt-row">
+            <div class="mt-col-sm-8 mt-col-xs-12">
+
+              <div class="mt-count-down__title">
+                {% if title %}
+                  {{ title|t }}
+                {% endif %}
+              </div>
+
+              <div class="mt-count-down__message">
+                {% if prompt_message %}
+                  {{ prompt_message|t }}
+                {% endif %}
+              </div>
+
+            </div>
+
+            <div class="mt-col-sm-4 mt-col-xs-12">
+              {% if target_url and dismiss_text %}
+                <a href="{{ target_url }}" class="mt-count-down__button">{{ dismiss_text|t }}</a>
+              {% endif %}
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mt-col-md-4">
+          <div class="mt-count-down__daysto">
+            <span class="mt-count-down__notes">
+              {% if days_to %}
+                {{ days_to|t }}</span>
+              {% endif %}
+            <div class="mt-count-down-slot"></div>
+          </div>
+        </div>
+
+      </div>  <!-- /.mt-row -->
+    </div> <!-- /.mt-container -->
+  </div>
+
+{% endif %}

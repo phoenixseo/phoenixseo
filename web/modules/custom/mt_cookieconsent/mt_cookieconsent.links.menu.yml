@@ -1,0 +1,12 @@
+mt_cookieconsent.admin:
+  title: 'MtT Cookie Consent Module settings'
+  description: 'Configure the content and layout of the MtT Cookie Consent module.'
+  parent: system.admin_config_development
+  route_name: mt_cookieconsent.settings
+  weight: 100
+
+mt_cookieconsent.admin.config.settings:
+  title: 'MtT Cookie Consent Module settings'
+  description: 'Configure the content and layout of the MtT Cookie Consent module.'
+  route_name: mt_cookieconsent.settings
+  parent: system.admin_config

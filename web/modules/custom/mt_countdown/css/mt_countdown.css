@@ -1,0 +1,110 @@
+/*
+ * MTCountDown styles
+ *  Add any module related style here
+ */
+/*layout*/
+.mt-count-down {
+  box-sizing: border-box;
+  padding: 20px 0;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+}
+.mt-count-down *,
+.mt-count-down *::before,
+.mt-count-down *::after {
+  box-sizing: inherit;
+}
+.mt-count-down .mt-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .mt-count-down .mt-container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .mt-count-down .mt-container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .mt-count-down .mt-container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .mt-count-down .mt-container {
+    max-width: 1140px;
+  }
+}
+.mt-count-down .mt-row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.mt-count-down .mt-col-md-8,
+.mt-count-down .mt-col-md-4,
+.mt-count-down .mt-col-sm-8,
+.mt-count-down .mt-col-sm-4,
+.mt-count-down .mt-col-xs-12 {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media (min-width: 576px) {
+  .mt-count-down .mt-col-sm-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  .mt-count-down .mt-col-sm-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+}
+@media (min-width: 768px) {
+  .mt-count-down .mt-col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  .mt-count-down .mt-col-md-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+}
+.mt-count-down .mt-count-down__daysto {
+  text-align: center;
+}
+.mt-count-down.alert button.close {
+  padding: 0 10px;
+  height: 100%;
+  top: -5px;
+  right: 20px;
+  font-size: 34px;
+  padding: 0;
+  background: 0 0;
+  border: 0;
+  -webkit-appearance: none;
+  float: right;
+  position: relative;
+}
+.mt-count-down-block .mt-count-down__daysto {
+  text-align: left;
+  margin: 15px 0;
+}
+.mt-count-down-block .mt-count-down__button {
+  display: inline-block;
+}

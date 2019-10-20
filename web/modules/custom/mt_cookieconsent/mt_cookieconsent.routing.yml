@@ -1,0 +1,7 @@
+mt_cookieconsent.settings:
+  path: 'admin/config/mt_cookieconsent'
+  defaults:
+    _form: '\Drupal\mt_cookieconsent\Form\MTCookieConsentSettingsForm'
+    _title: 'MtT Cookie Consent Module Settings'
+  requirements:
+    _permission: 'administer site configuration'

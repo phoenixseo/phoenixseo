@@ -1,0 +1,8 @@
+<?php
+/**
+ * Implements hook_install().
+ */
+function mt_countdown_install() {
+  // Set default values for config which require dynamic values.
+  \Drupal::configFactory()->getEditable('mt_countdown.settings')->set('expiration_date', date('Y-m-d H:i'))->save();
+}
