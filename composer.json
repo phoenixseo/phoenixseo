@@ -28,7 +28,7 @@
         "drupal/amptheme": "^3",
         "drupal/better_exposed_filters": "^3",
         "drupal/console": "^1.0.2",
-        "drupal/core": "^8.7.0",
+        "drupal/core": "^8",
         "drupal/ctools": "^3",
         "drupal/eu_cookie_compliance": "^1",
         "drupal/fences": "^2",
@@ -66,7 +66,8 @@
         "drupal/inline_entity_form": "^1",
         "drupal/views_bulk_edit": "^2",
         "drupal/views_bulk_operations": "^3",
-        "drupal/fontyourface": "^3"
+        "drupal/fontyourface": "^3",
+        "drupal/pwa": "^1"
     },
     "conflict": {
         "drupal/drupal": "*",

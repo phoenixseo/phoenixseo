@@ -73,6 +73,8 @@
 /web/sites/*/settings.php
 /web/sites/*/settings/*
 /web/sites/*/services.yml
+/web/sites/*/default.services.yml
+/web/sites/*/default.settings.php
 
 # contrib profile und themes werden autom. installiert
 /web/profiles/contrib/

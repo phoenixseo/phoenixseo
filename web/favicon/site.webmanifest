@@ -3,12 +3,12 @@
     "short_name": "PHOENIXSEO",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png?v=69PmROwlaA",
+            "src": "/favicon/android-chrome-192x192.png?v=alg75QJBpB",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png?v=69PmROwlaA",
+            "src": "/favicon/android-chrome-512x512.png?v=alg75QJBpB",
             "sizes": "512x512",
             "type": "image/png"
         }
