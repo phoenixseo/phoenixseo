@@ -24,8 +24,6 @@
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/address": "^1",
         "drupal/admin_toolbar": "^1",
-        "drupal/amp": "^3",
-        "drupal/amptheme": "^3",
         "drupal/better_exposed_filters": "^3",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8",
