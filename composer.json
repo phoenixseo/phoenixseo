@@ -65,7 +65,10 @@
         "drupal/views_bulk_edit": "^2",
         "drupal/views_bulk_operations": "^3",
         "drupal/fontyourface": "^3",
-        "drupal/pwa": "^1"
+        "drupal/pwa": "^1",
+        "drupal/body_node_id_class": "^1",
+        "drupal/disqus": "^1",
+        "drupal/tvi": "^1"
     },
     "conflict": {
         "drupal/drupal": "*",
